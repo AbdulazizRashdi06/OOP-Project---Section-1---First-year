@@ -31,11 +31,12 @@ void menuItem::addCategory(string s) {
     categories.push_back(s);
 }
 void menuItem::deleteCategory(int s) {
-    categories.erase(categories.begin()+s);
+    if (s >= 0 && s < categories.size())
+    {categories.erase(categories.begin()+s);}
 }
 void menuItem::setCategory(int s) {
-
-    category = categories[s];
+    if (s >= 0 && s < categories.size())
+   { category = categories[s];}
 }
 string menuItem::getCategory( ) {
 
