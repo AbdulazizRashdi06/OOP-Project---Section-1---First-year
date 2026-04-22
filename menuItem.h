@@ -6,23 +6,30 @@
 #define OOP_PROJECT_YEAR1_MENUITEM_H
 #include <string>
 using namespace std;
-
+#include <vector>
 
 class menuItem {
     float price;
     int quantity, itemID;
     static int count;
-    string name;
+    string name, category;
+    vector<string> categories = {"Appetizer", "Main Course", "Dessert", "Drink"};
     public:
     menuItem(string n,float p, int q );
-    void resetCounter();
+    static void resetCounter();
     void setPrice(float );
     void addQuantity(int );
     void setName(string );
+    void setCategory(int s);
+    void addCategory(string);
+    void deleteCategory(int);
+    void setQuantity(int );
+
+
+    string getCategory( );
     string getName();
     float getPrice();
     int getQuantity();
-    void setQuantity(int );
     int getItemID();
 
 

@@ -26,6 +26,22 @@ void menuItem::setName(string n) {
 
     name = n;
 }
+
+void menuItem::addCategory(string s) {
+    categories.push_back(s);
+}
+void menuItem::deleteCategory(int s) {
+    categories.erase(categories.begin()+s);
+}
+void menuItem::setCategory(int s) {
+
+    category = categories[s];
+}
+string menuItem::getCategory( ) {
+
+    return category;
+
+}
 string menuItem::getName() {
     return name;
 }
