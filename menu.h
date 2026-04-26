@@ -5,16 +5,28 @@
 #ifndef OOP_PROJECT_YEAR1_MENU_H
 #define OOP_PROJECT_YEAR1_MENU_H
 #include <vector>
+
+#include "menuItem.h"
 using namespace std;
 using std::vector;
 
 
 class menu {
 
-    vector<>
+    vector<menuItem> items;
     public:
     menu();
     ~menu();
+    void addItem(menuItem item);
+    void removeItem(menuItem item);
+    void removeAllItems();
+    void deisplayMenu();
+
+
+   menuItem getItem(int);
+
+
+
 
 
 
