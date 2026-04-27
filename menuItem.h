@@ -9,6 +9,7 @@ using namespace std;
 #include <vector>
 
 class menuItem {
+    protected:
     float price;
     int quantity, itemID;
     static int count;

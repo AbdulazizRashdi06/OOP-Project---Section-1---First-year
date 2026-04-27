@@ -18,9 +18,9 @@ class menu {
     menu();
     ~menu();
     void addItem(menuItem item);
-    void removeItem(menuItem item);
+    void removeItem(int );
     void removeAllItems();
-    void deisplayMenu();
+    void displayMenu();
 
 
    menuItem getItem(int);

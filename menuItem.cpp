@@ -38,6 +38,9 @@ void menuItem::setCategory(int s) {
     if (s >= 0 && s < categories.size())
    { category = categories[s];}
 }
+
+
+
 string menuItem::getCategory( ) {
 
     return category;
