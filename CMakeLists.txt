@@ -7,4 +7,6 @@ add_executable(OOP_Project_YEAR1 main.cpp
         menuItem.cpp
         menuItem.h
         menu.cpp
-        menu.h)
+        menu.h
+        foodItem.cpp
+        foodItem.h)
