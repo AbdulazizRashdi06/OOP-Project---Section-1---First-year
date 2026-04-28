@@ -3,3 +3,42 @@
 //
 
 #include "table.h"
+
+
+table::table(int c) {
+ capacity = c   ;
+}
+
+int table::getCapacity() {
+
+    return capacity;
+}
+
+order table::getCurrentOrder() {
+
+    return currentOrder;
+}
+
+int table::getTableNumber() {
+
+    return tableNumber;
+}
+
+void table::assignOrder(order *o) {
+
+    currentOrder = o;
+}
+
+void table::setCapacity(int c) {
+    capacity = c;
+}
+
+bool table::isEmpty() {
+
+    return not  isOccupied;
+}
+
+void table::setOccupied(bool c) {
+
+    isOccupied = c;
+}

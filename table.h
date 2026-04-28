@@ -20,6 +20,7 @@ class table {
     order getCurrentOrder();
     void setCapacity(int );
     void setOccupied(bool );
+    void assignOrder(order* o);
 
 
 
