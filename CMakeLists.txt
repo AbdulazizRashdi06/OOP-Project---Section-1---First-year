@@ -11,4 +11,6 @@ add_executable(OOP_Project_YEAR1 main.cpp
         foodItem.cpp
         foodItem.h
         drinkItem.cpp
-        drinkItem.h)
+        drinkItem.h
+        table.cpp
+        table.h)
