@@ -6,7 +6,23 @@
 #define OOP_PROJECT_YEAR1_FOODITEM_H
 
 
-class foodItem {
+#include "menuItem.h"
+
+class foodItem : public menuItem {
+private:
+    bool isSpicy;
+    int calories;
+
+public:
+    foodItem(string n, float p, int q, bool spicy, int cal);
+
+    void setIsSpicy(bool spicy);
+    void setCalories(int cal);
+
+    bool getIsSpicy();
+    int getCalories();
+
+    void displayFood();
 };
 
 
