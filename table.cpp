@@ -7,6 +7,7 @@
 
 table::table(int c) {
  capacity = c   ;
+ currentOrder = nullptr;
 }
 
 int table::getCapacity() {
@@ -14,7 +15,7 @@ int table::getCapacity() {
     return capacity;
 }
 
-order table::getCurrentOrder() {
+order* table::getCurrentOrder() {
 
     return currentOrder;
 }

@@ -27,12 +27,12 @@ void menu::removeAllItems() {
 
 
 menuItem* menu::getItem(int i) {
-    return items[i];
+    return items[i - 1];
 
 }
 
 void menu::removeItem(int i) {
-    items.erase(items.begin() + i);
+    items.erase(items.begin() + (i - 1));
 }
 
 void menu::displayMenu() {
