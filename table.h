@@ -18,7 +18,7 @@ class table {
     table(int n, int c);
     int getTableNumber();
     int getCapacity();
-    bool isEmpty();
+    bool getIsOccupied();
     order* getCurrentOrder();
     void setCapacity(int );
     void setOccupied(bool );

@@ -41,9 +41,9 @@ void table::setCapacity(int c) {
     capacity = c;
 }
 
-bool table::isEmpty() {
+bool table::getIsOccupied() {
 
-    return not  isOccupied;
+    return   isOccupied;
 }
 
 void table::setOccupied(bool c) {
