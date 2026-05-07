@@ -51,4 +51,8 @@ void table::setOccupied(bool c) {
     isOccupied = c;
 }
 
+void table::freeTable() {
+    isOccupied = false;
+    currentOrder = nullptr;
 
+}

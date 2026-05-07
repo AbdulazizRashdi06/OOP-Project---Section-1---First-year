@@ -23,6 +23,7 @@ class table {
     void setCapacity(int );
     void setOccupied(bool );
     void assignOrder(order* o);
+    void freeTable();
 
 
 
