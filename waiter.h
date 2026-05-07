@@ -8,6 +8,7 @@ using namespace std;
 #define OOP_PROJECT_YEAR1_WAITER_H
 class waiter {
 private:
+    order billOrder;
     int waiterID;
     string name;
     table* assignedTable;

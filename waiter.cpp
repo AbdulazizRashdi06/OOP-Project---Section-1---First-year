@@ -35,6 +35,12 @@ void waiter::resetCounter() {
 }
 
 void waiter::displayWaiter() {
-    cout  << " Waiter Name " << name << endl;
-}
+    cout << "Waiter ID: " << waiterID << endl;
+    cout << "Waiter Name: " << name << endl;
 
+    if (assignedTable != nullptr) {
+        cout << "Assigned Table: " << assignedTable->getTableNumber() << endl;
+    } else {
+        cout << "No table assigned" << endl;
+    }
+}
