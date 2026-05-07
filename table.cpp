@@ -42,3 +42,5 @@ void table::setOccupied(bool c) {
 
     isOccupied = c;
 }
+
+

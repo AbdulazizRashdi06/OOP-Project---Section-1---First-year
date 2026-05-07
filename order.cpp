@@ -14,6 +14,7 @@ using namespace std;
 int order::count=0;
 order::order() {
     orderID = count + 1;
+    count += 1;
     status="Pending";
 }
 void order::resetCounter() {
