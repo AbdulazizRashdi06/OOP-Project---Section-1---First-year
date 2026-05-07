@@ -15,7 +15,7 @@ class table {
     order* currentOrder;
     public:
 
-    table(int c);
+    table(int n, int c);
     int getTableNumber();
     int getCapacity();
     bool isEmpty();

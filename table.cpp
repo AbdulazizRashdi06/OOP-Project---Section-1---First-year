@@ -5,10 +5,15 @@
 #include "table.h"
 
 
-table::table(int c) {
- capacity = c   ;
- currentOrder = nullptr;
+
+table::table(int n, int c) {
+    tableNumber = n;
+    capacity = c;
+    isOccupied = false;
+    currentOrder = nullptr;
 }
+
+
 
 int table::getCapacity() {
 
