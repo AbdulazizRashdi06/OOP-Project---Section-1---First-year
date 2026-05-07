@@ -36,7 +36,7 @@ void menu::removeItem(int i) {
 }
 
 void menu::displayMenu() {
-    for (int i = 0; i < items.size(), i++) {
+    for (int i = 0; i < items.size(); i++) {
         cout << items[i]->getName() << endl;
     }
 }
