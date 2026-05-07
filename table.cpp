@@ -31,9 +31,11 @@ int table::getTableNumber() {
 }
 
 void table::assignOrder(order *o) {
-
     currentOrder = o;
+    isOccupied = true;
 }
+
+
 
 void table::setCapacity(int c) {
     capacity = c;
