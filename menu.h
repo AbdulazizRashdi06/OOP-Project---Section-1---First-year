@@ -13,17 +13,17 @@ using std::vector;
 
 class menu {
 
-    vector<menuItem> items;
+    vector<menuItem*> items;
     public:
     menu();
     ~menu();
-    void addItem(menuItem item);
+    void addItem(menuItem* item);
     void removeItem(int );
     void removeAllItems();
     void displayMenu();
 
 
-   menuItem getItem(int);
+   menuItem* getItem(int);
 
 
 

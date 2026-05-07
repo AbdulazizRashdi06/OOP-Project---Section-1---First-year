@@ -17,7 +17,7 @@ menu::~menu() {
 }
 
 
-void menu::addItem(menuItem s) {
+void menu::addItem(menuItem* s) {
     items.push_back(s);
 }
 
@@ -26,7 +26,7 @@ void menu::removeAllItems() {
     }
 
 
-menuItem menu::getItem(int i) {
+menuItem* menu::getItem(int i) {
     return items[i];
 
 }
@@ -37,7 +37,7 @@ void menu::removeItem(int i) {
 
 void menu::displayMenu() {
     for (int i = 0; i < items.size(), i++;) {
-        cout << items[i].getName() << endl;
+        cout << items[i]->getName() << endl;
     }
 }
 

@@ -10,22 +10,23 @@ using namespace std;
 
 
 class menuItem {
-    protected:
+protected:
     float price;
     int quantity, itemID;
     static int count;
     string name, category;
     vector<string> categories = {"Appetizer", "Main Course", "Dessert", "Drink"};
-    public:
-    menuItem(string n,float p, int q );
+public:
+    menuItem(string n, float p, int q, string c);
     static void resetCounter();
     void setPrice(float );
     void addQuantity(int );
     void setName(string );
-    void setCategory(int s);
+    void setCategory(string s);
     void addCategory(string);
-    void deleteCategory(int);
+
     void setQuantity(int );
+    virtual void displayItem();
 
 
     string getCategory( );

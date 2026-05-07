@@ -14,7 +14,7 @@ private:
     int calories;
 
 public:
-    foodItem(string n, float p, int q, bool spicy, int cal);
+    foodItem(string n, float p, int q, string c, bool spicy, int cal);
 
     void setIsSpicy(bool spicy);
     void setCalories(int cal);

@@ -4,7 +4,7 @@
 using namespace std;
 
 //constructor
-foodItem::foodItem(string n,float p,int q,bool spicy,int cal):menuItem(n,p,q) {
+foodItem::foodItem(string n,float p,int q,string c ,bool spicy,int cal):menuItem(n,p,q,c) {
     isSpicy=spicy;
     calories=cal;
 }

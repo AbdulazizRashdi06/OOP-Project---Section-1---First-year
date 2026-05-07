@@ -5,8 +5,8 @@
 #include "menuItem.h"
 using namespace std;
 
-menuItem::menuItem(string n, float p, int q) {
-    name = n; price = p; quantity = q;
+menuItem::menuItem(string n, float p, int q, string c) {
+    name = n; price = p; quantity = q; category = c;
     itemID = count++;
 
 }
@@ -28,15 +28,11 @@ void menuItem::setName(string n) {
 }
 
 void menuItem::addCategory(string s) {
-    categories.push_back(s);
+    category = s;
 }
-void menuItem::deleteCategory(int s) {
-    if (s >= 0 && s < categories.size())
-    {categories.erase(categories.begin()+s);}
-}
-void menuItem::setCategory(int s) {
-    if (s >= 0 && s < categories.size())
-   { category = categories[s];}
+
+void menuItem::setCategory(string s) {
+    category = s;
 }
 
 
