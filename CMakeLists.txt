@@ -16,4 +16,8 @@ add_executable(OOP_Project_YEAR1 main.cpp
         table.cpp
         table.h
         order.cpp
-        order.h)
+        order.h
+        bill.cpp
+        bill.h
+        waiter.cpp
+        waiter.h)
