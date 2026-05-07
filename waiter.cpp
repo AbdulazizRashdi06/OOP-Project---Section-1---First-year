@@ -7,11 +7,11 @@
 
 waiter::waiter(string n) {
     name = n;
-
+    assignedTable = nullptr;
     waiterID = count++;
 }
 
-void waiter::assignTable(table t) {
+void waiter::assignTable(table* t) {
 
     assignedTable = t ;
 }
@@ -20,7 +20,7 @@ string waiter::getName() {
     return name;
 }
 
-table waiter::getTable() {
+table* waiter::getTable() {
 
     return assignedTable;
 }

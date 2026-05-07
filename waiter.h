@@ -10,7 +10,7 @@ class waiter {
 private:
     int waiterID;
     string name;
-    table assignedTable;
+    table* assignedTable;
     static int count;
 
 public:
@@ -21,8 +21,8 @@ public:
     int getWaiterID();
     string getName();
 
-    void assignTable(table t);
-    table getTable();
+    void assignTable(table* t);
+    table* getTable();
 
     void displayWaiter();
 };
