@@ -16,41 +16,53 @@ void mainPage(menu &m,
               vector<drinkItem> &drinks,
               vector<order> &o,
               vector<table> &t,
-              vector<waiter> &w);
+              vector<waiter> &w,
+              float &TP,
+              float &DP);
 
 void menuPage(menu &m,
               vector<foodItem> &foods,
               vector<drinkItem> &drinks,
               vector<order> &o,
               vector<table> &t,
-              vector<waiter> &w);
+              vector<waiter> &w,
+              float &TP,
+              float &DP);
 
 void orderPage(menu &m,
               vector<foodItem> &foods,
               vector<drinkItem> &drinks,
               vector<order> &o,
               vector<table> &t,
-              vector<waiter> &w);
+              vector<waiter> &w,
+              float &TP,
+              float &DP);
 
 void tablePage(menu &m,
               vector<foodItem> &foods,
               vector<drinkItem> &drinks,
               vector<order> &o,
               vector<table> &t,
-              vector<waiter> &w);
+              vector<waiter> &w,
+              float &TP,
+              float &DP);
 
 void waiterPage(menu &m,
               vector<foodItem> &foods,
               vector<drinkItem> &drinks,
               vector<order> &o,
               vector<table> &t,
-              vector<waiter> &w);
+              vector<waiter> &w,
+              float &TP,
+              float &DP);
 
 void checkoutPage(menu &m,
               vector<foodItem> &foods,
               vector<drinkItem> &drinks,
               vector<order> &o,
               vector<table> &t,
-              vector<waiter> &w);
+              vector<waiter> &w,
+              float &TP,
+              float &DP);
 
 #endif
