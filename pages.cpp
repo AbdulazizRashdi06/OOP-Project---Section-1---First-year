@@ -123,7 +123,7 @@ cout<< " ===== MENU PAGE =====" <<endl;
         string name, catagory, size;
 
 
-        cout<< " Food Item NAME : " ;
+        cout<< " Drink Item NAME : " ;
         cin>> name ;
         cout<< " Price : " ;
         cin>> price ;
