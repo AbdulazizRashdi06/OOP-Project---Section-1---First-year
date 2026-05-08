@@ -20,4 +20,6 @@ add_executable(OOP_Project_YEAR1 main.cpp
         bill.cpp
         bill.h
         waiter.cpp
-        waiter.h)
+        waiter.h
+        pages.cpp
+        pages.h)
