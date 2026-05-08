@@ -1,21 +1,56 @@
-//
-// Created by abdul on 5/8/2026.
-//
-
 #ifndef OOP_PROJECT_YEAR1_PAGES_H
 #define OOP_PROJECT_YEAR1_PAGES_H
 
+#include <vector>
+#include "foodItem.h"
+#include "drinkItem.h"
 #include "menu.h"
 #include "order.h"
 #include "table.h"
 #include "waiter.h"
 
-void mainPage(menu &m, order &o, table &t, waiter &w);
-void menuPage();
-void orderPage();
-void tablePage();
-void waiterPage();
-void billPage();
+using namespace std;
 
+void mainPage(menu &m,
+              vector<foodItem> &foods,
+              vector<drinkItem> &drinks,
+              vector<order> &o,
+              vector<table> &t,
+              vector<waiter> &w);
 
-#endif //OOP_PROJECT_YEAR1_PAGES_H
+void menuPage(menu &m,
+              vector<foodItem> &foods,
+              vector<drinkItem> &drinks,
+              vector<order> &o,
+              vector<table> &t,
+              vector<waiter> &w);
+
+void orderPage(menu &m,
+              vector<foodItem> &foods,
+              vector<drinkItem> &drinks,
+              vector<order> &o,
+              vector<table> &t,
+              vector<waiter> &w);
+
+void tablePage(menu &m,
+              vector<foodItem> &foods,
+              vector<drinkItem> &drinks,
+              vector<order> &o,
+              vector<table> &t,
+              vector<waiter> &w);
+
+void waiterPage(menu &m,
+              vector<foodItem> &foods,
+              vector<drinkItem> &drinks,
+              vector<order> &o,
+              vector<table> &t,
+              vector<waiter> &w);
+
+void checkoutPage(menu &m,
+              vector<foodItem> &foods,
+              vector<drinkItem> &drinks,
+              vector<order> &o,
+              vector<table> &t,
+              vector<waiter> &w);
+
+#endif
