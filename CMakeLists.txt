@@ -8,7 +8,6 @@ add_executable(OOP_Project_YEAR1 main.cpp
         menuItem.h
         menu.cpp
         menu.h
-<<<<<<< HEAD
         foodItem.cpp
         foodItem.h
         drinkItem.cpp

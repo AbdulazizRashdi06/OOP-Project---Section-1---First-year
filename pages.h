@@ -5,6 +5,10 @@
 #ifndef OOP_PROJECT_YEAR1_PAGES_H
 #define OOP_PROJECT_YEAR1_PAGES_H
 
+#include "menu.h"
+#include "order.h"
+#include "table.h"
+#include "waiter.h"
 
 void mainPage(menu &m, order &o, table &t, waiter &w);
 void menuPage();

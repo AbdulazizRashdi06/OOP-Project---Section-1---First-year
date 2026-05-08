@@ -3,6 +3,7 @@
 //
 #include<string>
 #include "menuItem.h"
+#include <iostream>
 using namespace std;
 
 menuItem::menuItem(string n, float p, int q, string c) {
@@ -58,4 +59,12 @@ void menuItem::setQuantity(int q) {
 int menuItem::getItemID() {
 
     return itemID;
+}
+
+void menuItem::displayItem() {
+    cout << "ID: " << itemID
+         << " | Name: " << name
+         << " | Price: " << price
+         << " | Quantity: " << quantity
+         << " | Category: " << category;
 }

@@ -29,7 +29,7 @@ int foodItem::getCalories() {
     return calories;
 }
 
-//show food information
+
 void foodItem::displayFood() {
     cout<<"Item:"<< getName()<< " (ID:" << getItemID() << ")"<< endl;
     cout<<"Price: $" << getPrice()<< " | Qty: "<< getQuantity()<< endl;

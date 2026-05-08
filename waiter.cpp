@@ -4,6 +4,7 @@
 
 #include "waiter.h"
 
+int waiter::count = 1;
 
 waiter::waiter(string n) {
     name = n;
