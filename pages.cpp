@@ -85,7 +85,7 @@ cout<< " ===== MENU PAGE =====" <<endl;
         if (choice == 1) {
             isSpicy = true;
         }
-        else if (choice == 2) {
+        else if (choice == 0) {
             isSpicy = false;
         }
         cout<< " calories : " ;
@@ -102,11 +102,13 @@ cout<< " ===== MENU PAGE =====" <<endl;
 
         foods.push_back(foodItem(name, price, quantity, catagory, isSpicy, calories));
         m.addItem(&foods.back());
-
-
-
-
-
+        cout<<" Item Added Successfuly " <<endl;
+        choice = 0;
+        while (choice != 1) {
+            cout<< "1. Go back -  " ;
+            cin>> choice;
+        }
+        menuPage(m, foods, drinks, o, t, w);
 
     }
         else if ( choice == 0) {
