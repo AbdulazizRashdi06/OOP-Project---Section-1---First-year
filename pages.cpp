@@ -44,7 +44,7 @@ void mainPage(menu &m,
         waiterPage(m, foods, drinks , o, t, w,TP,DP);
     }
     else if (choice == 5) {
-        waiterPage(m, foods, drinks , o, t, w,TP,DP);
+        billSettings(m, foods, drinks , o, t, w,TP,DP);
     }
     else if (choice == 0) {
         cout<< " ===== END PAGE ===== " <<endl;
@@ -71,6 +71,12 @@ cout<< " ===== MENU PAGE =====" <<endl;
     cin>> choice;
     if (choice == 1) {
         m.displayMenu();
+        choice = 0;
+        while (choice != 1) {
+            cout<< "1. Go back -  " ;
+            cin>> choice;
+        }
+        menuPage(m, foods, drinks , o, t, w,TP,DP);
     }
     else if (choice == 2) {
         float price;
@@ -151,21 +157,32 @@ cout<< " ===== MENU PAGE =====" <<endl;
         }
         menuPage(m, foods, drinks , o, t, w,TP,DP);
     }
+
+    else if (choice == 4) {
+        int c;
+
+        m.displayMenu();
+
+        cout << "Enter item number to remove: ";
+        cin >> c;
+
+        m.removeItem(c);
+
+        cout << "Item removed successfully" << endl;
+
+        choice = 0;
+        while (choice != 1) {
+            cout << "1. Go back - ";
+            cin >> choice;
+        }
+
+        menuPage(m, foods, drinks, o, t, w, TP, DP);
+    }
+
+
         else if ( choice == 0) {
             mainPage(m, foods, drinks , o, t, w,TP,DP);
     }
-
-}
-
-void orderPage(menu &m,
-              vector<foodItem> &foods,
-              vector<drinkItem> &drinks,
-              vector<order> &o,
-              vector<table> &t,
-              vector<waiter> &w,
-              float &TP,
-              float &DP) {
-    cout<< " ===== order Page test" <<endl;
 
 }
 
@@ -188,4 +205,17 @@ void waiterPage(menu &m,
               float &TP,
               float &DP) {
     cout<< " ===== waiter Page test" <<endl;
+}
+
+
+void billSettings(menu &m,
+              vector<foodItem> &foods,
+              vector<drinkItem> &drinks,
+              vector<order> &o,
+              vector<table> &t,
+              vector<waiter> &w,
+              float &TP,
+              float &DP) {
+
+    cout<< " ===== bill Settings Page test" <<endl;
 }

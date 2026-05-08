@@ -56,7 +56,7 @@ void waiterPage(menu &m,
               float &TP,
               float &DP);
 
-void checkoutPage(menu &m,
+void billSettings(menu &m,
               vector<foodItem> &foods,
               vector<drinkItem> &drinks,
               vector<order> &o,

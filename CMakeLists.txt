@@ -21,4 +21,7 @@ add_executable(OOP_Project_YEAR1 main.cpp
         waiter.cpp
         waiter.h
         pages.cpp
-        pages.h)
+        pages.h
+        billSettings.cpp
+        orderPage.cpp
+)
