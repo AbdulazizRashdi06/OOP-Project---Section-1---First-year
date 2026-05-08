@@ -1,44 +1,55 @@
-//
-// Created by abdul on 5/7/2026.
-//
-
 #include "bill.h"
-
 #include <iostream>
-#include <ostream>
+#include <iomanip>
+using namespace std;
 
 bill::bill(order o, float t, float d) {
-    billOrder = o ;
+    billOrder = o;
     TaxLessAmount = billOrder.calculateTotal();
-
-    tax = (t/100) * TaxLessAmount;
-    discount = d/100 * TaxLessAmount;
-    finalAmount = TaxLessAmount + tax - discount;
+    
+    taxPercent = t;
+    discountPercent = d;
+    
+    taxAmount = (t / 100.0f) * TaxLessAmount;
+    discountAmount = (d / 100.0f) * TaxLessAmount;
+    finalAmount = TaxLessAmount + taxAmount - discountAmount;
 }
 
 float bill::calculateBill() {
-
-    finalAmount = TaxLessAmount + tax - discount;
+    TaxLessAmount = billOrder.calculateTotal();
+    taxAmount = (taxPercent / 100.0f) * TaxLessAmount;
+    discountAmount = (discountPercent / 100.0f) * TaxLessAmount;
+    finalAmount = TaxLessAmount + taxAmount - discountAmount;
     return finalAmount;
 }
 
 void bill::setTax(float t) {
-    tax = (t/100) * TaxLessAmount;
+    taxPercent = t;
+    taxAmount = (t / 100.0f) * TaxLessAmount;
+    finalAmount = TaxLessAmount + taxAmount - discountAmount;
 }
 
 void bill::setDiscount(float d) {
-    discount = d/100 * TaxLessAmount;
+    discountPercent = d;
+    discountAmount = (d / 100.0f) * TaxLessAmount;
+    finalAmount = TaxLessAmount + taxAmount - discountAmount;
 }
 
 float bill::getTaxLessAmount() {
     return TaxLessAmount;
 }
 
+float bill::getFinalAmount() {
+    return finalAmount;
+}
+
 void bill::displayBill() {
-
-
-    cout << "Before Taxes: " << TaxLessAmount << endl;
-    cout << "Tax: " << tax << "% (" << taxAmount << ")" << endl;
-    cout << "Discount: " << discount << "% (" << discountAmount << ")" << endl;
-    cout << "Final Amount: " << finalAmount << endl;
+    cout << fixed << setprecision(2);
+    cout << "\n=== BILL ===" << endl;
+    cout << "Subtotal: $" << TaxLessAmount << endl;
+    cout << "Tax (" << taxPercent << "%): $" << taxAmount << endl;
+    cout << "Discount (" << discountPercent << "%): -$" << discountAmount << endl;
+    cout << "------------------------" << endl;
+    cout << "FINAL AMOUNT: $" << finalAmount << endl;
+    cout << "===========\n" << endl;
 }
