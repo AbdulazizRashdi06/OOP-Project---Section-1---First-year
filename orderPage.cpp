@@ -112,6 +112,23 @@ void orderPage(menu &m,
             }
         }
     }
+    else if (choice == 5) {
+        int oc;
+        int id;
+
+        cout << "Enter Order NUM : ";
+        cin >> oc;
+
+        o[oc - 1].displayOrder();
+
+        cout << "Enter Item ID to remove: ";
+        cin >> id;
+
+        o[oc - 1].removeItem(id);
+
+        cout << "Item removed " << endl;
+        orderPage(m, foods, drinks, o, t, w, TP, DP);
+    }
 
 
 }
