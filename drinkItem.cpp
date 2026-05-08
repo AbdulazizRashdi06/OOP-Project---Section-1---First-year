@@ -1,19 +1,14 @@
-#ifndef DRINKITEM_H
-#define DRINKITEM_H
+#include "drinkItem.h"
 
-#include "menuItem.h"
+drinkItem::drinkItem(string n, float p, int q, string c, string sz) 
+    : menuItem(n, p, q, c) {
+    size = sz;
+}
 
-class drinkItem : public menuItem {
-private:
-    string size;
+void drinkItem::setSize(string sz) { size = sz; }
+string drinkItem::getSize() { return size; }
 
-public:
-    drinkItem(string n, float p, int q, string c, string sz);
-    
-    void setSize(string sz);
-    string getSize();
-    
-    void displayItem();
-};
-
-#endif
+void displayItem() {
+    menuItem::displayItem();
+    cout << " | Size: " << size << endl;
+}
