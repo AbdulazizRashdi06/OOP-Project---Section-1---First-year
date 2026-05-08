@@ -73,7 +73,9 @@ cout<< " ===== MENU PAGE =====" <<endl;
         m.displayMenu();
     }
     else if (choice == 2) {
-        int price, quantity, calories;
+        float price;
+        int quantity, calories;
+
         string name , catagory;
         bool isSpicy;
         cout<< " Food Item NAME : " ;
@@ -116,8 +118,10 @@ cout<< " ===== MENU PAGE =====" <<endl;
 
     }
     else if (choice == 3)
-    {int price, quantity, calories, size;
-        string name , catagory;
+    {float price;
+        int quantity;
+        string name, catagory, size;
+
 
         cout<< " Food Item NAME : " ;
         cin>> name ;
@@ -138,7 +142,7 @@ cout<< " ===== MENU PAGE =====" <<endl;
 
 
         drinks.push_back(drinkItem(name, price, quantity, catagory, size));
-        m.addItem(&foods.back());
+        m.addItem(&drinks.back());
         cout<<" Item Added Successfuly " <<endl;
         choice = 0;
         while (choice != 1) {
