@@ -42,7 +42,7 @@ void orderPage(menu &m,
                 cout << "Item out of stock" << endl;
             }
             o.back().displayOrder();
-            cout << "1 -Anything more ?"
+            cout << "1 -Anything more ?" << endl <<
                     "0 -Finish order " << endl;
             cin >> choice;
             if (choice == 0) {
@@ -81,10 +81,14 @@ void orderPage(menu &m,
         }
         else {
 
-            int choice;
+            int  id;
             cout << "Enter Order NUM : " ;
-            cin >> choice;
-            o[choice - 1].displayOrder();
+            cin >> id;
+            for (int i = 0; i < o.size(); i++) {
+                if (o[i].getOrderID() == id) {
+                    o[i].displayOrder();
+                }
+            }
             orderPage(m, foods, drinks , o, t, w,TP,DP);
         }
     }
@@ -103,7 +107,11 @@ void orderPage(menu &m,
 
             menuItem* item = m.getItem(choice);
             if (item->getQuantity() > 0) {
-                o[num - 1].addItem(item);
+                for (int i = 0; i < o.size(); i++) {
+                    if (o[i].getOrderID() == num) {
+                        o[i].addItem(item);
+                    }
+                }
                 item->setQuantity(item->getQuantity() - 1);
                 cout << "item added" << endl;
                 orderPage(m, foods, drinks , o, t, w,TP,DP);
@@ -120,55 +128,69 @@ void orderPage(menu &m,
         cout << "Enter Order NUM : ";
         cin >> oc;
 
-        o[oc - 1].displayOrder();
+        for (int i = 0; i < o.size(); i++) {
+            if (o[i].getOrderID() == oc) {
+                o[i].displayOrder();
 
-        cout << "Enter Item ID to remove: ";
-        cin >> id;
+            }
 
-        o[oc - 1].removeItem(id);
+            cout << "Enter Item ID to remove: ";
+            cin >> id;
 
-        cout << "Item removed " << endl;
-        orderPage(m, foods, drinks, o, t, w, TP, DP);
-    }
-    else if (choice == 6) {
+            o[oc - 1].removeItem(id);
 
-        int oc;
-
-        cout << "Enter Order NUM : ";
-        cin >> oc;
-
-        bill b(o[oc - 1], TP, DP);
-        b.displayBill();
-
-        o[oc - 1].setStatus("Submitted");
-        choice = 0;
-        while (choice != 1) {
-
-            cout << "Order submitted ! - 1 to continue " << endl;
-            cin >> choice;
+            cout << "Item removed " << endl;
+            orderPage(m, foods, drinks, o, t, w, TP, DP);
         }
-        orderPage(m, foods, drinks, o, t, w, TP, DP);
     }
+            else if (choice == 6) {
 
-    else if (choice == 7) {
-        int oc;
+            int oc;
 
-        cout << "Enter Order NUM : ";
-        cin >> oc;
+            cout << "Enter Order NUM : ";
+            cin >> oc;
 
+                for (int i = 0; i < o.size(); i++) {
+                    if (o[i].getOrderID() == oc) {
+                        bill b(o[i], TP, DP);
+                        b.displayBill();
+                        o[i].setStatus("Submitted");
+                    }
+                }
 
-        o[oc - 1].setStatus("Served");
-        choice = 0;
-        while (choice != 1) {
+            choice = 0;
+            while (choice != 1) {
 
-            cout << "Order served ! - 1 to continue " << endl;
-            cin >> choice;
+                cout << "Order submitted ! - 1 to continue " << endl;
+                cin >> choice;
+            }
+            orderPage(m, foods, drinks, o, t, w, TP, DP);
         }
-        orderPage(m, foods, drinks, o, t, w, TP, DP);
-    }
-    else if (choice == 0) {
-        mainPage(m, foods, drinks, o, t, w, TP, DP);
-    }
+
+        else if (choice == 7) {
+            int oc;
+
+            cout << "Enter Order NUM : ";
+            cin >> oc;
+
+
+            for (int i = 0; i < o.size(); i++) {
+                if (o[i].getOrderID() == oc) {
+                    o[i].setStatus("Served");
+                }
+            }
+            ;
+            choice = 0;
+            while (choice != 1) {
+
+                cout << "Order served ! - 1 to continue " << endl;
+                cin >> choice;
+            }
+            orderPage(m, foods, drinks, o, t, w, TP, DP);
+        }
+        else if (choice == 0) {
+            mainPage(m, foods, drinks, o, t, w, TP, DP);
+        }
 
 
     }

@@ -24,4 +24,5 @@ add_executable(OOP_Project_YEAR1 main.cpp
         pages.h
         billSettings.cpp
         orderPage.cpp
+        menupage.cpp
 )
