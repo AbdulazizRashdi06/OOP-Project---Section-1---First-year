@@ -3,6 +3,7 @@
 //
 
 #include "pages.h"
+#include "bill.h"
 
 
 void orderPage(menu &m,
@@ -129,6 +130,45 @@ void orderPage(menu &m,
         cout << "Item removed " << endl;
         orderPage(m, foods, drinks, o, t, w, TP, DP);
     }
+    else if (choice == 6) {
+
+        int oc;
+
+        cout << "Enter Order NUM : ";
+        cin >> oc;
+
+        bill b(o[oc - 1], TP, DP);
+        b.displayBill();
+
+        o[oc - 1].setStatus("Submitted");
+        choice = 0;
+        while (choice != 1) {
+
+            cout << "Order submitted ! - 1 to continue " << endl;
+            cin >> choice;
+        }
+        orderPage(m, foods, drinks, o, t, w, TP, DP);
+    }
+
+    else if (choice == 7) {
+        int oc;
+
+        cout << "Enter Order NUM : ";
+        cin >> oc;
 
 
-}
+        o[oc - 1].setStatus("Served");
+        choice = 0;
+        while (choice != 1) {
+
+            cout << "Order served ! - 1 to continue " << endl;
+            cin >> choice;
+        }
+        orderPage(m, foods, drinks, o, t, w, TP, DP);
+    }
+    else if (choice == 0) {
+        mainPage(m, foods, drinks, o, t, w, TP, DP);
+    }
+
+
+    }
