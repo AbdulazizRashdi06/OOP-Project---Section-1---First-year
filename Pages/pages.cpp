@@ -7,11 +7,6 @@
 #include <iostream>
 #include <ostream>
 
-#include "foodItem.h"
-#include "menu.h"
-
-
-
 void mainPage(menu &m,
               vector<foodItem> &foods,
               vector<drinkItem> &drinks,

@@ -137,8 +137,13 @@ void orderPage(menu &m,
 
             cout << "Enter Item ID to remove: ";
             cin >> id;
+        for (int i = 0; i < o.size(); i++) {
+            if (o[i].getOrderID() == oc) {
+                o[i].removeItem(id);
 
-            o[oc - 1].removeItem(id);
+            }
+        }
+
 
             cout << "Item removed " << endl;
             orderPage(m, foods, drinks, o, t, w, TP, DP);
@@ -192,6 +197,6 @@ void orderPage(menu &m,
         else if (choice == 0) {
             mainPage(m, foods, drinks, o, t, w, TP, DP);
         }
-
-
     }
+
+

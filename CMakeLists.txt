@@ -3,26 +3,28 @@ project(OOP_Project_YEAR1)
 
 set(CMAKE_CXX_STANDARD 20)
 
+include_directories(Classes Pages)
+
 add_executable(OOP_Project_YEAR1 main.cpp
-        menuItem.cpp
-        menuItem.h
-        menu.cpp
-        menu.h
-        foodItem.cpp
-        foodItem.h
-        drinkItem.cpp
-        drinkItem.h
-        table.cpp
-        table.h
-        order.cpp
-        order.h
-        bill.cpp
-        bill.h
-        waiter.cpp
-        waiter.h
-        pages.cpp
-        pages.h
-        billSettings.cpp
-        orderPage.cpp
-        menupage.cpp
+        Classes/menuItem.cpp
+        Classes/menuItem.h
+        Classes/menu.cpp
+        Classes/menu.h
+        Classes/foodItem.cpp
+        Classes/foodItem.h
+        Classes/drinkItem.cpp
+        Classes/drinkItem.h
+        Classes/table.cpp
+        Classes/table.h
+        Classes/order.cpp
+        Classes/order.h
+        Classes/bill.cpp
+        Classes/bill.h
+        Classes/waiter.cpp
+        Classes/waiter.h
+        Pages/pages.cpp
+        Pages/pages.h
+        Pages/billSettings.cpp
+        Pages/orderPage.cpp
+        Pages/menupage.cpp
 )
