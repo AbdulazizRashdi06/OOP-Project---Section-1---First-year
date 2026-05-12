@@ -3,9 +3,12 @@
 //
 
 #include "pages.h"
+#include "InputValidation.h"
 
 #include <iostream>
 #include <ostream>
+
+#include "../Functions/InputValidation.h"
 
 void mainPage(menu &m,
               vector<foodItem> &foods,
@@ -22,9 +25,8 @@ void mainPage(menu &m,
     cout<< " 4.  Waiter Page " <<endl;
     cout<< " 5.  Bill Page " <<endl;
     cout<< " 0.  Exit " <<endl;
-    int choice;
-    cout<< " Enter Number : ";
-    cin>>choice;
+    int choice = intInput("Enter number", 0 , 5 );
+
 
     if (choice == 1) {
          menuPage(m, foods, drinks , o, t, w,TP,DP);

@@ -3,7 +3,7 @@ project(OOP_Project_YEAR1)
 
 set(CMAKE_CXX_STANDARD 20)
 
-include_directories(Classes Pages)
+include_directories(Classes Pages Functions)
 
 add_executable(OOP_Project_YEAR1 main.cpp
         Classes/menuItem.cpp
@@ -27,4 +27,6 @@ add_executable(OOP_Project_YEAR1 main.cpp
         Pages/billSettings.cpp
         Pages/orderPage.cpp
         Pages/menupage.cpp
+        Functions/InputValidation.cpp
+        Functions/InputValidation.h
 )
