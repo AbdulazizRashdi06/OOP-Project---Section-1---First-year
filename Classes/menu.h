@@ -23,6 +23,7 @@ class menu {
 
 
    menuItem* getItem(int);
+   int getSize();
 
 
 

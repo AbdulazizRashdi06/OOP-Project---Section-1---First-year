@@ -9,5 +9,5 @@ using namespace std;
 
 
 int intInput(string, int, int);
-float floatInput(string, int, int);
+float floatInput(string, float, float);
 #endif //OOP_PROJECT_YEAR1_INPUTVALIDATION_H

@@ -4,6 +4,7 @@
 
 #include "pages.h"
 #include "bill.h"
+#include "InputValidation.h"
 
 
 void orderPage(menu &m,
@@ -24,14 +25,13 @@ void orderPage(menu &m,
     cout << "6. Submit order / show bill" << endl;
     cout << "7. Mark order as served" << endl;
     cout << "0. Back" << endl;
-    cin >> choice;
+    choice = intInput("Enter number", 0, 7);
     if (choice == 1) {
         bool stillOrdering = true;
         o.push_back(order());
         while (stillOrdering) {
             m.displayMenu();
-            cout << "Pick Item : ";
-            cin >> choice;
+            choice = intInput("Pick Item : ", 1, m.getSize());
 
             menuItem* item = m.getItem(choice);
             if (item->getQuantity() > 0) {
@@ -44,7 +44,7 @@ void orderPage(menu &m,
             o.back().displayOrder();
             cout << "1 -Anything more ?" << endl <<
                     "0 -Finish order " << endl;
-            cin >> choice;
+            choice = intInput("Enter number : ", 0, 1);
             if (choice == 0) {
                 o.back().setStatus("Submitted");
                 stillOrdering = false;
@@ -82,8 +82,7 @@ void orderPage(menu &m,
         else {
 
             int  id;
-            cout << "Enter Order NUM : " ;
-            cin >> id;
+            id = intInput("Enter Order NUM : ", 1, 400000000);
             for (int i = 0; i < o.size(); i++) {
                 if (o[i].getOrderID() == id) {
                     o[i].displayOrder();
@@ -98,12 +97,10 @@ void orderPage(menu &m,
         }
         else {
             int choice, num;
-            cout << "Enter Order NUM : " ;
-            cin >> num;
+            num = intInput("Enter Order NUM : ", 1, 400000000);
 
             m.displayMenu();
-            cout << "Pick Item : ";
-            cin >> choice;
+            choice = intInput("Pick Item : ", 1, m.getSize());
 
             menuItem* item = m.getItem(choice);
             if (item->getQuantity() > 0) {
@@ -125,8 +122,7 @@ void orderPage(menu &m,
         int oc;
         int id;
 
-        cout << "Enter Order NUM : ";
-        cin >> oc;
+        oc = intInput("Enter Order NUM : ", 1, 400000000);
 
         for (int i = 0; i < o.size(); i++) {
             if (o[i].getOrderID() == oc) {
@@ -135,8 +131,7 @@ void orderPage(menu &m,
             }
         }
 
-            cout << "Enter Item ID to remove: ";
-            cin >> id;
+            id = intInput("Enter Item ID to remove: ", 1, 400000000);
         for (int i = 0; i < o.size(); i++) {
             if (o[i].getOrderID() == oc) {
                 o[i].removeItem(id);
@@ -153,8 +148,7 @@ void orderPage(menu &m,
 
             int oc;
 
-            cout << "Enter Order NUM : ";
-            cin >> oc;
+            oc = intInput("Enter Order NUM : ", 1, 400000000);
 
                 for (int i = 0; i < o.size(); i++) {
                     if (o[i].getOrderID() == oc) {
@@ -168,7 +162,7 @@ void orderPage(menu &m,
             while (choice != 1) {
 
                 cout << "Order submitted ! - 1 to continue " << endl;
-                cin >> choice;
+                choice = intInput("Order submitted ! - 1 to continue ", 1, 1);
             }
             orderPage(m, foods, drinks, o, t, w, TP, DP);
         }
@@ -176,8 +170,7 @@ void orderPage(menu &m,
         else if (choice == 7) {
             int oc;
 
-            cout << "Enter Order NUM : ";
-            cin >> oc;
+            oc = intInput("Enter Order NUM : ", 1, 400000000);
 
 
             for (int i = 0; i < o.size(); i++) {
@@ -190,7 +183,7 @@ void orderPage(menu &m,
             while (choice != 1) {
 
                 cout << "Order served ! - 1 to continue " << endl;
-                cin >> choice;
+                choice = intInput("Order served ! - 1 to continue ", 1, 1);
             }
             orderPage(m, foods, drinks, o, t, w, TP, DP);
         }

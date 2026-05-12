@@ -31,6 +31,10 @@ menuItem* menu::getItem(int i) {
 
 }
 
+int menu::getSize() {
+    return items.size();
+}
+
 void menu::removeItem(int i) {
     items.erase(items.begin() + (i - 1));
 }

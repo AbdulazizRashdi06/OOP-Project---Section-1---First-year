@@ -3,7 +3,7 @@
 //
 
 #include "pages.h"
-
+#include "InputValidation.h"
 
 
 
@@ -22,15 +22,14 @@ void menuPage(menu &m,
     cout<< " 3.  AddDrinkItem " <<endl;
     cout<< " 4.  RemoveMenuItem " <<endl;
     cout<< " 0.  Back " <<endl;
-    cout<< " Pick NUM :  " ;
-    int choice;
-    cin>> choice;
+
+
+     int choice = intInput("Enter number", 0 , 4 );
     if (choice == 1) {
         m.displayMenu();
         choice = 0;
         while (choice != 1) {
-            cout<< "1. Go back -  " ;
-            cin>> choice;
+             choice = intInput("1. Go back -  ", 1 , 1 );
         }
         menuPage(m, foods, drinks , o, t, w,TP,DP);
     }
@@ -42,22 +41,20 @@ void menuPage(menu &m,
         bool isSpicy;
         cout<< " Food Item NAME : " ;
         cin>> name ;
-        cout<< " Price : " ;
-        cin>> price ;
-        cout<< " Quantity : " ;
-        cin>> quantity ;
+        price = floatInput("Price : ", 0, 400000000);
+
+        quantity = intInput("Quantity", 0 , 400000000 );
         cout<< " Catagory : " ;
         cin>> catagory ;
-        cout<< " Is it Spicy - 1 for yes - 0 for NO : " ;
-        cin>> choice ;
+        choice = intInput(" Is it Spicy - 1 for yes - 0 for NO : ", 0 , 1 );
+
         if (choice == 1) {
             isSpicy = true;
         }
         else if (choice == 0) {
             isSpicy = false;
         }
-        cout<< " calories : " ;
-        cin>> calories ;
+        calories = intInput("Calories : ", 0 , 400000000 );
         cout<< " Item Name : " << name << endl
         << " Item Price : " << price << endl
         << " Item Quantity : " << quantity << endl
@@ -73,8 +70,7 @@ void menuPage(menu &m,
         cout<<" Item Added Successfuly " <<endl;
         choice = 0;
         while (choice != 1) {
-            cout<< "1. Go back -  " ;
-            cin>> choice;
+            choice = intInput("1. Go back -  ", 1, 1);
         }
         menuPage(m, foods, drinks , o, t, w,TP,DP);
 
@@ -87,10 +83,8 @@ void menuPage(menu &m,
 
         cout<< " Drink Item NAME : " ;
         cin>> name ;
-        cout<< " Price : " ;
-        cin>> price ;
-        cout<< " Quantity : " ;
-        cin>> quantity ;
+        price = floatInput("Price : ", 0, 400000000);
+        quantity = intInput("Quantity : ", 0, 400000000);
         cout<< " Catagory : " ;
         cin>> catagory ;
         cout<< " Size : : " ;
@@ -108,8 +102,7 @@ void menuPage(menu &m,
         cout<<" Item Added Successfuly " <<endl;
         choice = 0;
         while (choice != 1) {
-            cout<< "1. Go back -  " ;
-            cin>> choice;
+            choice = intInput("1. Go back -  ", 1, 1);
         }
         menuPage(m, foods, drinks , o, t, w,TP,DP);
     }
@@ -119,8 +112,7 @@ void menuPage(menu &m,
 
         m.displayMenu();
 
-        cout << "Enter item number to remove: ";
-        cin >> c;
+        c = intInput("Enter item number to remove: ", 1, m.getSize());
 
         m.removeItem(c);
 
@@ -128,8 +120,7 @@ void menuPage(menu &m,
 
         choice = 0;
         while (choice != 1) {
-            cout << "1. Go back - ";
-            cin >> choice;
+            choice = intInput("1. Go back - ", 1, 1);
         }
 
         menuPage(m, foods, drinks, o, t, w, TP, DP);
