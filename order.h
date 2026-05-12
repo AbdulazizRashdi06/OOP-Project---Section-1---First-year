@@ -4,11 +4,12 @@
 
 #ifndef OOP_PROJECT_YEAR1_ORDERS_H
 #define OOP_PROJECT_YEAR1_ORDERS_H
+
 #include <string>
 #include <vector>
+#include "menuItem.h"
 using namespace std;
 
-class menuItem;
 
 class order {
 private:

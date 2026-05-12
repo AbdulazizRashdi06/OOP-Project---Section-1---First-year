@@ -37,8 +37,8 @@ string order::getStatus() {return status;};
 
 float order::calculateTotal() {
     float total = 0;
-    for (auto item : orderedItems) {
-        total += item->getPrice();
+    for (int i = 0; i < orderedItems.size(); i++) {
+        total += orderedItems[i]->getPrice();
     }
     return total;
 }
@@ -48,8 +48,10 @@ int order::getOrderID() {
 void order::displayOrder() {
     cout << "Order ID: " << orderID << endl;
     cout << "Status: " << status << endl;
-    /*cout << "Items: " << endl;
-    for (auto item : orderedItems) {item->display();};*/
+    cout << "Items: " << endl;
+    for (int i = 0; i < orderedItems.size(); i++) {
+        orderedItems[i]->displayItem();
+    }
     cout << "Total: " << calculateTotal() << endl;
 }
 
