@@ -23,14 +23,9 @@ void order::resetCounter() {
 void order::addItem(menuItem* item) {
     orderedItems.push_back(item);
 };
-void order::removeItem(int itemID) {
-    orderedItems.erase(
-        std::remove_if(orderedItems.begin(), orderedItems.end(), [itemID](menuItem* item) {
-            return item->getItemID() == itemID;
-        }),
-        orderedItems.end());
 
-};
+void order::removeItem(int itemID) {};
+
 void order::setStatus(string s) {
     status = s;};
 string order::getStatus() {return status;};
