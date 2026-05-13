@@ -12,7 +12,7 @@ public:
   void setSize(string sz);
   string getSize();
 
-   void displayItem();
+   void displayItem() override;
 };
 
 #endif

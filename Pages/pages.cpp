@@ -48,18 +48,6 @@ void mainPage(menu &m,
     }
 }
 
-
-
-void tablePage(menu &m,
-              vector<foodItem> &foods,
-              vector<drinkItem> &drinks,
-              vector<order> &o,
-              vector<table> &t,
-              vector<waiter> &w,
-              float &TP,
-              float &DP) {
-    cout<< " ===== table Page test" <<endl;
-}
 void waiterPage(menu &m,
               vector<foodItem> &foods,
               vector<drinkItem> &drinks,

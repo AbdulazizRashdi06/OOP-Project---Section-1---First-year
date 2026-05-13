@@ -22,7 +22,7 @@ public:
     bool getIsSpicy();
     int getCalories();
 
-    void displayFood();
+    void  displayItem() override ;
 };
 
 

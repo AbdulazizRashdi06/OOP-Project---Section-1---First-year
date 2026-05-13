@@ -29,4 +29,5 @@ add_executable(OOP_Project_YEAR1 main.cpp
         Pages/menupage.cpp
         Functions/InputValidation.cpp
         Functions/InputValidation.h
+        Pages/tablesPage.cpp
 )
